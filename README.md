@@ -6,6 +6,8 @@
 - Dokumentation von Simon M.
 - Wahlkurs-Lehrkraft: Herr Rösele
 
+**Projektdatei steht zum öffentlichem Download und darf verwendet, verändert und in andere Projekten eingebunden werden**
+
 ## Komponenten für dieses Projekt
 
 1. Arduino
@@ -14,7 +16,7 @@
 
 ## Funktion des Projekts
 
-Bei diesem Sketch wird der Abstand bis zum nächsten Objekt gemessen und dann, genau wie bei einem Auto, ein akustisches Signal ausgegeben.
+In diesem Programm wird der Abstand bis zum nächsten Objekt gemessen und dann, genau wie bei einem Auto, ein akustisches Signal ausgegeben.
 Jenachdem wie nah ein Objekt ist verändert sich das akustische Signal:
 - Umso näher ein Objekt ist umso schneller Piepst das Signal
 - Ab einem sehr nahem Abstand wird ein konstanter Dauerton ausgegeben
