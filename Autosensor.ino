@@ -48,6 +48,7 @@ void loop() {
       //WENN OBJEKT IN BEREICH LIEGT WIRD DER TEIL AUSGEFÜHRT:
 	    
       //BERECHNEN DES ZEITABSTANDES IN PIEPSGERÄUSCH
+      //für weitere Details siehe Readme.md
       puls = (31 * entfernung - 218) / 2; 
 	  
       //ENTFERNEN VON NEGATIVEN WERTEN
