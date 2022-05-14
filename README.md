@@ -17,7 +17,7 @@ Jenachdem wie nah ein Objekt ist verändert sich das akustische Signal:
 
 ## Anwendungsmöglichkeiten im Alltag
 
-- Diese Art von Akustischen Sensoren wird oft in Autos verwendet. In so gut wie jedem Auto heutzutage befinden sich Abstandsmesser, welche den Abstand zu Objekten runderhum um das Auto messen. Wenn das Auto zu nah an ein solches Objekt heranfährt, gibt es ein akustisches Warnsignal. Der Fahrer wird also unterstützt, um ihm das Einparken oder andere Aktionen zu erleichtern.
+- Diese Art von Akustischen Sensoren wird oft in **Autos** verwendet. In so gut wie jedem Auto heutzutage befinden sich Abstandsmesser, welche den Abstand zu Objekten runderhum um das Auto messen. Wenn das Auto zu nah an ein solches Objekt heranfährt, gibt es ein **akustisches Warnsignal**. Der Fahrer wird also unterstützt, um ihm das Einparken oder andere Aktionen zu erleichtern.
 
 ## Technische Umsetung
 
@@ -27,6 +27,23 @@ Jenachdem wie nah ein Objekt ist verändert sich das akustische Signal:
   - Bei einem Abstand bis zu 23cm wird kein Signal ausgegeben
   - Bei einem Abstand von 23cm bis ca. 7cm wird ein variierendes Piepen ausgegeben
   - Ab einem Abstand von ca 7cm wird ein konstanter Dauerton ausgegeben
+
+### Messen der Entfernung
+
+1. Zum Messen der Entfernung muss der Arduino den Ultraschallsensor ansprechen. Dieser sendet dann Ultraschallwellen aus, welche von dem nächsten Objekt reflektieren und zurückgeschickt werden. 
+2. Nun wird die Zeit in Mikrosekunden `µs` gemessen, wie lang die Wellen gebraucht haben, den Weg zurückzulegen.
+	<br></br>
+	```c++
+	dauer = pulseIn(echo, HIGH);
+	```
+3. Im folgenden Schritt wird aus der Zeit eine Enfernung berechnet. 
+	<br></br>
+	- Zuerst wird die benötigte Zeit durch 2 geteilt, da die Wellen ja hin und zurückmussten, also den doppelten Weg zurückgelegt haben und wir nur den einfachen Weg brauchen.
+	- Danach wird diese Zeit mit der Schallgeschwindigkeit in Zentimeter pro Mikrosekunde `cm/µs`, also `0.03432` multipliziert, um daraus eine Strecke in `cm` zu berechnen. Hierbei gilt: `µs * (cm/µs) = cm`
+	<br></br>
+	```c++
+	entfernung = (dauer/2) * 0.03432;
+	```
 
 ### Berechnung des Piepabstandes
 
