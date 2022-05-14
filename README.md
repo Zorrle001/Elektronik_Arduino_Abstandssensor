@@ -45,7 +45,7 @@ Jenachdem wie nah ein Objekt ist verändert sich das akustische Signal:
 	entfernung = (dauer/2) * 0.03432;
 	```
 
-### Berechnung des Piepabstandes
+### Berechnung des Piepabstandes & Ausgabe des Signals
 
 1. Um ein Piep Geräusch zu erzeugen, muss der Lautsprecher des Arduinos immer für eine bestimmte Zeit angeschaltet und darauf für eine bestimmte Zeit ausgeschaltet sein
 2. Also muss ein Zeitabstand zwischen dem Anschalten und Ausschalten in abhängigkeit des Abstandes `x` berechnet werden
@@ -56,7 +56,7 @@ Jenachdem wie nah ein Objekt ist verändert sich das akustische Signal:
 	```c++
 	puls = (31 * entfernung - 218) / 2; 
 	```
-6. Nun wird überprüft ob dieser Zeitabstand kleiner wie Null ist und wenn dies zutrifft auf 0 gesetzt
+6. Nun wird überprüft ob dieser Zeitabstand kleiner wie Null ist und wenn dies zutrifft auf 0 gesetzt, um sicherzugehen, dass keine negative Zahlen enthalten sind
 	<br></br>
 	```c++
 	if(puls < 0) {
