@@ -1,6 +1,7 @@
 # Akustischer Abstandssensor
 
 **Erstellt im Wahlkurs Elektronik am Gymnasium Mering**
+Dokumentation von Simon M.
 
 ## Komponenten für dieses Projekt
 
