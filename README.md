@@ -35,25 +35,34 @@ Jenachdem wie nah ein Objekt ist verändert sich das akustische Signal:
 3. Die Dauer des Piepsignals ist also 2 mal der Zeitabstand zwischen An- und Ausschalten des Lautsprechers
 4. Diese wird in diesem Projekt mit einer Geraden der Form `y = m * x + t` berechnet, indiesem Fall mit der Geraden `f(x) = 31 * x - 218`
 5. Um nun den Zeitabstand zu bekommen wird die Dauer des Signals geteilt durch 2 gerechnet 
-```c++
-puls = (31 * entfernung - 218) / 2; 
-```
+	<br></br>
+	```c++
+	puls = (31 * entfernung - 218) / 2; 
+	```
 6. Nun wird überprüft ob dieser Zeitabstand kleiner wie Null ist und wenn dies zutrifft auf 0 gesetzt
-```c++
-if(puls < 0) {
-  puls = 0;
-}
-```
+	<br></br>
+	```c++
+	if(puls < 0) {
+	  puls = 0;
+	}
+	```
 7. - Wenn nun der Zeitabstand größer wie 30ms ist, wird ein Piepston ausgegeben, indem der Lautsprecher aktiviert wird und nach dem berechnetem Zeitabstand wieder deaktiviert wird. Darauf folgt eine kurze Pause, auch in der länge des Zeitabstandes, damit das konstante Piepen ereicht wird, welches ja durch Lautsprecher an für `z` Sekunden und Lautsprecher aus für `z` Sekunden erzeugt wird
-```c++
-if(puls >= 30) {
-		  
-  digitalWrite(piezo, HIGH);
-  delay(puls);
-  digitalWrite(piezo, LOW);
-  delay(puls);
-  return;
+	<br></br>
+	```c++
+	if(puls >= 30) {
 
-}
-```
-  - Wenn der Zeitabstand kleiner wie 30ms ist, wird der Lautsprecher einfach nur Eingeschaltet, unabhängig von dem berechnetem Zeitabstand. Das ist also das Warnsignal wenn ein Objekt zu nah ist 
+	  digitalWrite(piezo, HIGH);
+	  delay(puls);
+	  digitalWrite(piezo, LOW);
+	  delay(puls);
+	  return;
+
+	}
+	```
+	- Wenn der Zeitabstand kleiner wie 30ms ist, wird der Lautsprecher einfach nur Eingeschaltet, unabhängig von dem berechnetem Zeitabstand. Das ist also das Warnsignal wenn ein Objekt zu nah ist 
+	<br></br>
+	```c++
+	}else {
+	  digitalWrite(piezo, HIGH);
+	}
+	```
