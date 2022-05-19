@@ -3,6 +3,7 @@
 **Erstellt im Wahlkurs Elektronik am Gymnasium Mering**
 
 - Projekt von Christoph W. & Simon M.
+- Jahresprojekt-Artikel Christoph W. & Simon M.
 - Dokumentation von Simon M.
 - Wahlkurs-Lehrkraft: Herr Rösele
 
